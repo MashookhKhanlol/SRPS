@@ -1,0 +1,84 @@
+# Node modules
+node_modules/
+
+# Next.js build output
+.next/
+out/
+.next/cache/
+
+# Production build
+dist/
+build/
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+*.log
+
+# Runtime data
+pids/
+*.pid
+*.seed
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Env files
+.env
+.env.*.local
+.env.local
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-workspace
+*.swp
+
+# TypeScript
+*.tsbuildinfo
+
+# Coverage
+coverage/
+coverage-final.json
+
+# Storybook
+out-storybook/
+
+# Vercel
+.vercel/
+.vercel_build_output/
+
+# pnpm
+.pnpm-debug.log
+.pnpm-store/
+
+# Misc caches
+.cache/
+.cache-loader/
+
+# Optional: local secret or credentials
+secrets.json
+
+# JetBrains
+*.iml
+
+# Lockfiles (keep if you want deterministic installs; uncomment to ignore)
+# package-lock.json
+# pnpm-lock.yaml
+
+# Docker
+docker-compose.override.yml
+.Dockerfile
+
+# Local Next/Image cache (if present)
+.next/images/
+
+# Ignore build artifacts from IDEs
+dist-*
+
+# Mac resource forks
+._*

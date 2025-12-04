@@ -1,0 +1,40 @@
+export const whatsNewData = {
+  officials: [
+    {
+      name: "Shri Prabhad Venkatesh Joshi",
+      position: "Hon'ble Cabinet Minister",
+    },
+    {
+      name: "Shri Shripod Yesso Naik",
+      position: "Hon'ble Minister of State",
+    },
+  ],
+  notices: [
+    {
+      date: "20 Nov",
+      title: "Public Notice - Gujarat Electricity Regulatory Commission (GERC) Framework",
+      tags: ["Scheme Guidelines/Framework"],
+    },
+    {
+      date: "15 Nov",
+      title: "Public Notice - Payment Release Mechanism under Utility Net Aggregation Scheme",
+      tags: ["Scheme Guidelines/Framework"],
+    },
+    {
+      date: "08 Nov",
+      title:
+        "Public Notice - Amendment in Guidelines for Implementation of Awareness and Outreach program under PM Surya Ghar",
+      tags: ["Scheme Guidelines/Framework"],
+    },
+    {
+      date: "01 Oct",
+      title: "Public Notice - Ministry of Power letter regarding waiver of net metering agreement",
+      tags: ["General Notices"],
+    },
+    {
+      date: "03 Sep",
+      title: "Public Notice - Updation of List (Manufacturers and Models of Solar PV Modules) of ALMM Order 2035-Reg",
+      tags: ["Technical Documents"],
+    },
+  ],
+}
