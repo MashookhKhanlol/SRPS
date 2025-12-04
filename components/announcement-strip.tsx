@@ -24,15 +24,15 @@ export function AnnouncementStrip() {
 
   return (
     <div className="w-full bg-[#E9F6FF] border-b border-[#0A6FB0] border-opacity-20">
-      <div className="px-4 md:px-8 py-3 md:py-4">
+      <div className="px-4 md:px-8 py-4 md:py-6">
         <div className="flex items-center gap-3">
-          <AlertCircle className="text-[#0A6FB0] flex-shrink-0" size={24} />
+          <AlertCircle className="text-[#0A6FB0] flex-shrink-0" size={28} />
 
           <div className="flex-1 overflow-hidden">
             <div className="flex gap-2 items-center">
-              <span className="text-xs md:text-sm font-semibold text-[#083B63] whitespace-nowrap">Announcement</span>
+              <span className="text-sm md:text-base font-semibold text-[#083B63] whitespace-nowrap">Announcement</span>
               <div className="flex-1 overflow-hidden">
-                <p className="text-xs md:text-sm text-[#0B2130] font-medium line-clamp-2 md:line-clamp-1">
+                <p className="text-sm md:text-base text-[#0B2130] font-medium line-clamp-2 md:line-clamp-1">
                   {announcements[current]}
                 </p>
               </div>

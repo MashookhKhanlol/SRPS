@@ -2,10 +2,18 @@ import Image from "next/image"
 
 export function HeroSection() {
   return (
-    <section className="bg-white pt-12 md:pt-16 pb-12 md:pb-20 px-4 md:px-8">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-start">
-        {/* Left column - Text content */}
-        <div className="md:col-span-2 pt-4 md:pt-0">
+    <section className="bg-white pt-12 md:pt-16 pb-0 px-4 md:px-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-stretch">
+        {/* Left column - Text content (with map background) */}
+        <div
+          className="md:col-span-2 pt-4 md:pt-0 relative overflow-hidden h-full flex flex-col justify-center"
+          style={{
+            backgroundImage: "url('/map-image.png')",
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: "calc(100% - 590px) calc(50% + 50px)",
+            backgroundSize: '55%',
+          }}
+        >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
             PM Surya Ghar: <span className="text-[#0A6FB0]">Mufti Bijli Yojana</span>
           </h1>
@@ -28,7 +36,7 @@ export function HeroSection() {
         </div>
 
         {/* Right column - Portrait */}
-        <div className="md:col-span-1 relative flex justify-center">
+        <div className="md:col-span-1 relative flex justify-center items-center h-full">
           <div className="w-full max-w-[1152px]">
             <Image
               src="/modiji-saiji-1.png"

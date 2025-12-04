@@ -10,8 +10,8 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       <Header />
-      <AnnouncementStrip />
       <HeroSection />
+      <AnnouncementStrip />
       <WhatsNewSection />
       <BenefitsSection />
       <RegistrationStepper />
