@@ -23,16 +23,16 @@ export function AnnouncementStrip() {
   const handleNext = () => setCurrent((prev) => (prev + 1) % announcements.length)
 
   return (
-    <div className="w-full bg-[#E9F6FF] border-b border-[#0A6FB0] border-opacity-20">
+    <div id="announcement" className="w-full bg-[var(--color-muted)] border-b border-[var(--color-secondary)] border-opacity-20">
       <div className="px-4 md:px-8 py-4 md:py-6">
         <div className="flex items-center gap-3">
-          <AlertCircle className="text-[#0A6FB0] flex-shrink-0" size={28} />
+          <AlertCircle className="text-[var(--color-secondary)] flex-shrink-0" size={28} />
 
           <div className="flex-1 overflow-hidden">
             <div className="flex gap-2 items-center">
-              <span className="text-sm md:text-base font-semibold text-[#083B63] whitespace-nowrap">Announcement</span>
+              <span className="text-sm md:text-base font-semibold text-[var(--color-primary)] whitespace-nowrap">Announcement</span>
               <div className="flex-1 overflow-hidden">
-                <p className="text-sm md:text-base text-[#0B2130] font-medium line-clamp-2 md:line-clamp-1">
+                <p className="text-sm md:text-base text-[var(--color-foreground)] font-medium line-clamp-2 md:line-clamp-1">
                   {announcements[current]}
                 </p>
               </div>
@@ -43,17 +43,17 @@ export function AnnouncementStrip() {
           <div className="flex gap-1 ml-auto flex-shrink-0">
             <button
               onClick={handlePrev}
-              className="p-1 hover:bg-white hover:bg-opacity-50 rounded transition"
+              className="p-1 hover:bg-white hover:bg-opacity-20 rounded transition"
               aria-label="Previous announcement"
             >
-              <ChevronLeft size={18} className="text-[#0A6FB0]" />
+              <ChevronLeft size={18} className="text-[var(--color-secondary)]" />
             </button>
             <button
               onClick={handleNext}
-              className="p-1 hover:bg-white hover:bg-opacity-50 rounded transition"
+              className="p-1 hover:bg-white hover:bg-opacity-20 rounded transition"
               aria-label="Next announcement"
             >
-              <ChevronRight size={18} className="text-[#0A6FB0]" />
+              <ChevronRight size={18} className="text-[var(--color-secondary)]" />
             </button>
           </div>
         </div>

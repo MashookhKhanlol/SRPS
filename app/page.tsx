@@ -1,8 +1,9 @@
 import { Header } from "@/components/header"
 import { AnnouncementStrip } from "@/components/announcement-strip"
 import { HeroSection } from "@/components/hero-section"
-import { WhatsNewSection } from "@/components/whats-new-section"
-import { BenefitsSection } from "@/components/benefits-section"
+import { AboutSection } from "@/components/about-section"
+import { MissionSection } from "@/components/mission-section"
+import { VisionSection } from "@/components/vision-section"
 import { RegistrationStepper } from "@/components/registration-stepper"
 import { Footer } from "@/components/footer"
 
@@ -12,8 +13,9 @@ export default function Home() {
       <Header />
       <HeroSection />
       <AnnouncementStrip />
-      <WhatsNewSection />
-      <BenefitsSection />
+      <AboutSection />
+      <MissionSection />
+      <VisionSection />
       <RegistrationStepper />
       <Footer />
     </main>

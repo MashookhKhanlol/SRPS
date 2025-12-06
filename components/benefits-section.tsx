@@ -2,9 +2,9 @@ import { BenefitsCard } from "./benefits-card"
 
 export function BenefitsSection() {
   return (
-    <section className="bg-gradient-to-b from-white to-[#F2FAFF] py-12 md:py-20 px-4 md:px-8">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#083B63]">
-        <span className="text-[#0A6FB0]">Benefits</span>
+    <section className="bg-gradient-to-b from-[var(--color-card)] to-[var(--color-muted)] py-12 md:py-20 px-4 md:px-8">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[var(--color-primary)]">
+        <span className="text-[var(--color-secondary)]">Benefits</span>
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
@@ -31,11 +31,11 @@ export function BenefitsSection() {
       </div>
 
       {/* Additional benefit note */}
-      <div className="bg-white rounded-lg p-6 md:p-8 border border-[#E9F6FF]">
-        <p className="text-sm md:text-base text-[#0B2130] mb-4">
+      <div className="bg-[var(--color-card)] rounded-lg p-6 md:p-8 border border-[var(--color-muted)]">
+        <p className="text-sm md:text-base text-[var(--color-foreground)] mb-4">
           <span className="font-semibold">For special states, an additional 10% Subsidy will be applicable per kW</span>
         </p>
-        <p className="text-sm md:text-base font-semibold text-[#083B63] mb-6">
+        <p className="text-sm md:text-base font-semibold text-[var(--color-primary)] mb-6">
           Suitable Rooftop Solar Plant Capacity for households
         </p>
 
@@ -46,9 +46,9 @@ export function BenefitsSection() {
             { label: "", value: "150-300", range: "150-300" },
             { label: "", value: "2-3 kw", range: "2-3 kw" },
           ].map((item, idx) => (
-            <div key={idx} className="bg-[#F2FAFF] rounded p-3 md:p-4">
-              {item.label && <p className="text-xs md:text-sm font-semibold text-[#083B63] mb-2">{item.label}</p>}
-              <p className="text-lg md:text-xl font-bold text-[#0A6FB0]">{item.value}</p>
+            <div key={idx} className="bg-[var(--color-muted)] rounded p-3 md:p-4">
+              {item.label && <p className="text-xs md:text-sm font-semibold text-[var(--color-primary)] mb-2">{item.label}</p>}
+              <p className="text-lg md:text-xl font-bold text-[var(--color-secondary)]">{item.value}</p>
             </div>
           ))}
         </div>
