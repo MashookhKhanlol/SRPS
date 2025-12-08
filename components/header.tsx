@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Menu, X, LogIn } from "lucide-react"
+import { Menu, X, Mail } from "lucide-react"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -45,10 +45,10 @@ export function Header() {
 
             {/* Right side buttons */}
             <div className="flex items-center gap-2 md:gap-4">
-              <button className="hidden md:inline-flex items-center gap-2 px-4 py-2 bg-[var(--color-card)] text-[var(--color-primary)] rounded-full text-sm font-semibold hover:opacity-90 transition">
-                <LogIn size={18} />
-                Login
-              </button>
+              <Link href="/contact" className="hidden md:inline-flex items-center gap-2 px-4 py-2 bg-[var(--color-card)] text-[var(--color-primary)] rounded-full text-sm font-semibold hover:opacity-90 transition">
+                <Mail size={18} />
+                Contact
+              </Link>
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="md:hidden p-2 hover:bg-white hover:bg-opacity-10 rounded-lg transition"
@@ -62,12 +62,11 @@ export function Header() {
           <nav className={`${isMenuOpen ? "block" : "hidden"} md:block md:flex gap-1 flex-wrap`}>
             {[
               { label: "Home", href: "/" },
-              { label: "About Us", href: "#announcement" },
               { label: "Products and Services", href: "/products-and-services" },
               { label: "Why Choose Us", href: "/why-choose-us" },
               { label: "Gallery", href: "/gallery" },
-              { label: "Customer Reviews", href: "#customer-reviews" },
-              { label: "Contact", href: "#contact" },
+              { label: "Customer Reviews", href: "/why-choose-us#customer-reviews" },
+              { label: "Contact", href: "/contact" },
             ].map((item) => (
               <Link
                 key={item.label}

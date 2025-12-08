@@ -149,3 +149,13 @@
     @apply text-xl md:text-2xl font-semibold;
   }
 }
+
+/* Hide scrollbar for testimonial carousel */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

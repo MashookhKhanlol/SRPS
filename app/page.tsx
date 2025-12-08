@@ -4,7 +4,6 @@ import { HeroSection } from "@/components/hero-section"
 import { AboutSection } from "@/components/about-section"
 import { MissionSection } from "@/components/mission-section"
 import { VisionSection } from "@/components/vision-section"
-import { RegistrationStepper } from "@/components/registration-stepper"
 import { Footer } from "@/components/footer"
 
 export default function Home() {
@@ -16,7 +15,6 @@ export default function Home() {
       <AboutSection />
       <MissionSection />
       <VisionSection />
-      <RegistrationStepper />
       <Footer />
     </main>
   )
