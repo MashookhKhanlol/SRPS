@@ -1,90 +1,201 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { ProductCard } from "@/components/ui/card-21"
+import { WhatsAppButton } from "@/components/whatsapp-button"
+import Image from "next/image"
 
 export default function ProductsAndServicesPage() {
   const products = [
     {
-      imageUrl: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=900&auto=format&fit=crop&q=80",
-      title: "Solar Panels",
-      icon: "☀️",
-      stats: "High Efficiency • 25+ Years Warranty",
-      href: "#",
-      themeColor: "45 100% 50%", // Bright yellow/orange for solar
+      title: "Ongrid Solar",
+      description: "Grid-tied solar systems that connect to the utility grid, allowing you to sell excess energy back to the grid and reduce your electricity bills.",
     },
     {
-      imageUrl: "/invertor.png",
-      title: "Solar Inverters",
-      icon: "⚡",
-      stats: "Advanced Technology • Smart Monitoring",
-      href: "#",
-      themeColor: "200 80% 45%", // Blue for technology
+      title: "OFF Grid Solar Systems",
+      description: "Standalone solar systems that operate independently from the utility grid, perfect for remote locations and areas with unreliable grid power.",
     },
     {
-      imageUrl: "/battery.png",
-      title: "Solar Batteries",
-      icon: "🔋",
-      stats: "Long Life • Energy Storage",
-      href: "#",
-      themeColor: "150 50% 40%", // Green for energy storage
+      title: "Hybrid Solar Systems",
+      description: "Advanced systems that combine grid-tied and off-grid features, providing flexibility and reliability with battery backup capabilities.",
     },
     {
-      imageUrl: "/other.png",
-      title: "Other Products",
-      icon: "🏠",
-      stats: "Complete Solutions • Turnkey Installation",
-      href: "#",
-      themeColor: "250 50% 40%", // Purple for complete solutions
+      title: "Solar Water Pumps",
+      description: "Efficient solar-powered water pumping systems that connect to the utility grid, ideal for agricultural and irrigation applications.",
     },
     {
-      imageUrl: "/maintenance.jpg",
-      title: "Maintenance Services",
-      icon: "🔧",
-      stats: "Regular Checkups • 24/7 Support",
-      href: "#",
-      themeColor: "30 80% 50%", // Orange for services
+      title: "Solar Lights",
+      description: "Standalone off-grid solar LED parking and street light systems that provide reliable illumination without grid dependency.",
     },
     {
-      imageUrl: "/mission-engineer-2.jpg",
-      title: "Consultation",
-      icon: "💡",
-      stats: "Expert Advice • Free Assessment",
-      href: "#",
-      themeColor: "280 60% 50%", // Purple for consultation
+      title: "Solar Water Heater",
+      description: "Energy-efficient devices that use solar radiation to heat water, providing hot water for residential and commercial use while reducing energy costs.",
+    },
+  ]
+
+  const services = [
+    {
+      title: "Low Installation Costs",
+      description: "We offer competitive installation services at affordable prices, ensuring you get the best value for your investment in solar energy solutions.",
+    },
+    {
+      title: "Reusable Energy",
+      description: "We value nature and believe in recycling energy. Our commitment to sustainability ensures top-notch services that benefit both you and the environment.",
+    },
+    {
+      title: "Healthy and Safe Energy",
+      description: "Our products are designed with health and safety as top priorities, ensuring clean and safe energy solutions for your home and business.",
+    },
+    {
+      title: "Multi Purpose Usage",
+      description: "Our products are compatible for various conditions, segments, and purposes including Residential, Commercial, and Street applications.",
+    },
+    {
+      title: "Durable and Long Lasting",
+      description: "We provide durable products that are thoroughly tested and made with premium quality materials, ensuring long-term reliability and performance.",
+    },
+    {
+      title: "Hassle Free Installation",
+      description: "Our expert and professional installation team ensures smooth and hassle-free installation, taking care of all technical aspects for you.",
+    },
+  ]
+
+  const processSteps = [
+    {
+      step: "Step 1",
+      title: "Site Visit",
+      description: "Our team conducts a comprehensive site visit to assess your location, energy requirements, and installation feasibility.",
+    },
+    {
+      step: "Step 2",
+      title: "Design and Documentation",
+      description: "We create detailed system designs and prepare all necessary documentation including technical specifications and project plans.",
+    },
+    {
+      step: "Step 3",
+      title: "Fabrication & Installation",
+      description: "Our skilled technicians fabricate and install the solar system with precision, ensuring optimal performance and safety standards.",
+    },
+    {
+      step: "Step 4",
+      title: "Commissioning & Net Meter",
+      description: "We complete system commissioning, perform quality checks, and assist with net metering setup for grid-connected systems.",
     },
   ]
 
   return (
     <main className="min-h-screen bg-white">
       <Header />
-      <section className="bg-[var(--color-card)] py-12 md:py-20 px-4 md:px-8">
+      
+      {/* Header Section with Background Image */}
+      <section className="relative w-full h-64 md:h-96 overflow-hidden">
+        <div className="absolute inset-0 bg-[#083B63]">
+          <div 
+            className="absolute inset-0 bg-cover bg-center opacity-30"
+            style={{
+              backgroundImage: "url('/placeholder.jpg')",
+            }}
+          />
+          <div className="absolute inset-0 bg-[#083B63]/80"></div>
+        </div>
+        <div className="relative z-10 h-full flex items-center justify-center">
+          <h1 className="text-3xl md:text-5xl font-bold text-white uppercase">PRODUCTS & SERVICES</h1>
+        </div>
+      </section>
+
+      {/* Top-Notch Quality Products Section */}
+      <section className="bg-white py-12 md:py-20 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-[var(--color-primary)] mb-4 text-center">
-            Products and Services
-          </h1>
-          <div className="text-center text-[var(--color-muted-foreground)] text-lg mb-12">
-            <p>Comprehensive solar energy solutions for your home and business</p>
+          {/* Quality Guaranteed Banner */}
+          <div className="text-center mb-4">
+            <div className="inline-block bg-[#E9F6FF] px-6 py-2 rounded-full mb-6">
+              <span className="text-[#0A6FB0] font-semibold text-sm md:text-base">Quality Guaranteed</span>
+            </div>
           </div>
           
-          {/* Products Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-12 text-center">
+            Top-Notch Quality Products
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.map((product, index) => (
-              <div key={index} className="w-full h-[450px]">
-                <ProductCard
-                  imageUrl={product.imageUrl}
-                  title={product.title}
-                  icon={product.icon}
-                  stats={product.stats}
-                  href={product.href}
-                  themeColor={product.themeColor}
-                />
+              <div
+                key={index}
+                className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition"
+              >
+                <h3 className="text-xl font-bold text-gray-800 mb-3">{product.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{product.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Our Product Execution Process Section */}
+      <section className="bg-white py-12 md:py-20 px-4 md:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-12">Our Product Execution Process</h2>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
+            {/* Image */}
+            <div className="w-full h-64 md:h-96 relative rounded-lg overflow-hidden">
+              <Image
+                src="/placeholder.jpg"
+                alt="Solar installation process"
+                fill
+                className="object-cover"
+              />
+            </div>
+
+            {/* Process Steps */}
+            <div className="space-y-6">
+              {processSteps.map((item, index) => (
+                <div key={index} className="flex gap-4">
+                  <div className="flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#0A6FB0] rounded-full flex items-center justify-center">
+                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-baseline gap-2 mb-1">
+                      <span className="text-sm font-semibold text-[#0A6FB0]">{item.step}</span>
+                      <span className="text-lg font-bold text-gray-800">{item.title}</span>
+                    </div>
+                    <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Provided by APN Section */}
+      <section className="bg-white py-12 md:py-20 px-4 md:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-4">
+            <p className="text-gray-500 text-sm mb-2">Services</p>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-12 text-center">
+            Services Provided by APN
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition"
+              >
+                <h3 className="text-xl font-bold text-gray-800 mb-3">{service.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <Footer />
+      <WhatsAppButton />
     </main>
   )
 }
-
