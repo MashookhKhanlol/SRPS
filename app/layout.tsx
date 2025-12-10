@@ -4,6 +4,7 @@ import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Toaster } from "sonner"
 import "./globals.css"
+import CursorFollow from "@/components/ui/cursor-follow"
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600", "700"] })
 
@@ -33,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
-        {children}
+        <CursorFollow>{children}</CursorFollow>
         <Analytics />
         <Toaster />
       </body>
