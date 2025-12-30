@@ -39,21 +39,21 @@ export function WhoWeAreSection() {
           {/* Text Content */}
           <div className="space-y-6">
             <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-              We are a leading energy company with a team of experienced professionals dedicated to 
-              reducing carbon footprint and providing sustainable energy solutions. Our commitment 
-              to excellence and innovation drives us to deliver the best solar energy solutions for 
-              residential, commercial, and industrial needs.
+              Sun Radiation Power Solutions is a dedicated solar energy company focused on 
+              delivering clean, reliable, and cost-effective renewable energy solutions. We 
+              specialize in the supply, installation, and maintenance of high-quality solar panels, 
+              solar inverters, solar batteries, and both on-grid and off-grid solar power systems. 
+              Our mission is to help residential, commercial, and industrial customers reduce 
+              electricity costs while contributing to a greener and more sustainable environment.
             </p>
             <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-              With years of experience in the solar energy industry, we have established ourselves 
-              as a trusted partner for businesses and individuals looking to transition to clean, 
-              renewable energy. Our comprehensive range of products and services ensures that we 
-              can meet the diverse needs of our customers.
-            </p>
-            <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-              We believe in creating a sustainable future through innovative technology and 
-              exceptional service. Our team works tirelessly to provide solutions that are not 
-              only environmentally friendly but also economically viable for our clients.
+              With a strong emphasis on quality, safety, and performance, our experienced team 
+              designs customized solar solutions based on each client's energy needs. We follow 
+              industry best practices and use trusted technology to ensure long-term efficiency 
+              and durability. At Sun Radiation Power Solutions, customer satisfaction, timely 
+              project execution, and transparent service are our core values. We believe solar 
+              energy is the future, and we are committed to empowering communities by making 
+              clean energy accessible, affordable, and dependable for everyone.
             </p>
           </div>
 
@@ -73,12 +73,10 @@ export function WhoWeAreSection() {
         {/* Experience Counter */}
         <div className="mb-12">
           <div className="flex items-baseline gap-4 mb-6">
-            <span className="text-6xl md:text-8xl font-bold text-[#0A6FB0]">10</span>
+            <span className="text-6xl md:text-8xl font-bold text-[#0A6FB0]">5+</span>
             <span className="text-xl md:text-2xl text-gray-700 font-semibold">Years of Experience</span>
           </div>
-          <button className="px-8 py-3 bg-[#0A6FB0] text-white rounded-lg font-semibold hover:bg-[#083B63] transition">
-            READ MORE
-          </button>
+          
         </div>
 
         {/* Features Grid */}

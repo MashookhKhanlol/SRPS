@@ -40,11 +40,11 @@ export function HeroSection() {
           )}
 
           <h1
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
+            className="text-4xl md:text-5xl lg:text-5xl font-bold mb-4"
             onMouseEnter={() => setIsOverText(true)}
             onMouseLeave={() => setIsOverText(false)}
           >
-            Sun Radiation Power Solutions
+            Welcome To Sun Radiation Power Solutions
           </h1>
 
           <p
@@ -52,9 +52,16 @@ export function HeroSection() {
             onMouseEnter={() => setIsOverText(true)}
             onMouseLeave={() => setIsOverText(false)}
           >
-            Sun Radiation Power Solutions delivers premium, sustainable solar technology built for performance and durability.
-            From high-efficiency solar panels and inverters to advanced batteries and complete energy systems — we cater to residential, commercial, and industrial needs.
-            Experience smarter, cleaner, and more cost-effective energy for every project.
+            Sun Radiation Power Solutions is committed to delivering reliable and sustainable solar energy 
+            solutions. We offer a premium range of solar products including solar inverters, solar panels, 
+            solar batteries, and other related solar equipment to meet residential, commercial, and industrial 
+            energy needs.
+            <br/>
+            <br/>
+            With a focus on quality, effective solutions, and timely delivery, we ensure our customers 
+            receive the best in clean energy technology backed by professional service and long-term 
+            support. Our mission is to promote renewable energy and help build a greener and more 
+            energy-independent future.
           </p>
 
           {/* Call to action buttons */}

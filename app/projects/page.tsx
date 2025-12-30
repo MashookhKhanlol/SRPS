@@ -115,14 +115,21 @@ export default function ProjectsPage() {
               <h2 className="text-4xl md:text-5xl font-bold text-gray-800">WHO WE ARE ?</h2>
               <div className="space-y-4">
                 <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-                  APN Solar Energy Pvt. Ltd. is a JV Manufacturer, Energy consultant, and EPC provider 
-                  for residential, commercial, and industrial power. We specialize in delivering 
-                  comprehensive solar energy solutions that meet the diverse needs of our clients.
+                  Sun Radiation Power Solutions is a dedicated solar energy company focused on 
+                  delivering clean, reliable, and cost-effective renewable energy solutions. We 
+                  specialize in the supply, installation, and maintenance of high-quality solar panels, 
+                  solar inverters, solar batteries, and both on-grid and off-grid solar power systems. 
+                  Our mission is to help residential, commercial, and industrial customers reduce 
+                  electricity costs while contributing to a greener and more sustainable environment.
                 </p>
                 <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-                  APN is an ISO 9001, ISO 45001, and ISO 14001 certified company with 250+ Franchise 
-                  Partners across India. Our commitment to quality, safety, and environmental standards 
-                  ensures that every project we undertake meets the highest industry standards.
+                  With a strong emphasis on quality, safety, and performance, our experienced team 
+                  designs customized solar solutions based on each client's energy needs. We follow 
+                  industry best practices and use trusted technology to ensure long-term efficiency 
+                  and durability. At Sun Radiation Power Solutions, customer satisfaction, timely 
+                  project execution, and transparent service are our core values. We believe solar 
+                  energy is the future, and we are committed to empowering communities by making 
+                  clean energy accessible, affordable, and dependable for everyone.
                 </p>
               </div>
             </div>

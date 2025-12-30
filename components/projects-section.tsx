@@ -1,51 +1,64 @@
+import Link from "next/link"
+import { Grid, Home, Building2, Zap } from "lucide-react"
+
 export function ProjectsSection() {
+  const projectTypes = [
+    {
+      icon: Grid,
+      title: "On-Grid Project",
+      description: "On-grid solar systems are connected to the main electricity grid, allowing you to use solar power during the day and draw from the grid when needed. Excess energy can be fed back to the grid, potentially earning you credits or reducing your electricity bills significantly.",
+    },
+    {
+      icon: Zap,
+      title: "OFF-GRID PROJECTS",
+      description: "Off-grid solar systems operate independently from the main electricity grid, making them ideal for remote locations or areas with unreliable power supply. These systems include battery storage to ensure continuous power availability, even during nighttime or cloudy days.",
+    },
+    {
+      icon: Home,
+      title: "RESIDENTIAL PROJECTS",
+      description: "We design and install customized solar solutions for homes, helping homeowners reduce electricity costs and achieve energy independence. Our residential projects include rooftop solar installations, solar water heaters, and complete home solar power systems tailored to your energy needs.",
+    },
+    {
+      icon: Building2,
+      title: "COMMERCIAL PROJECTS",
+      description: "Our commercial solar solutions help businesses and industries reduce operational costs while demonstrating environmental responsibility. We handle large-scale installations for offices, factories, warehouses, and commercial buildings, ensuring maximum energy efficiency and ROI.",
+    },
+  ]
+
   return (
     <section className="bg-white py-12 md:py-20 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-12">PROJECTS</h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-12">Our Projects</h2>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
-          {/* Video Placeholder */}
-          <div className="w-full h-64 md:h-80 bg-gray-900 rounded-lg flex items-center justify-center">
-            <div className="text-center text-gray-400">
-              <div className="w-16 h-16 mx-auto mb-4 bg-gray-700 rounded-full flex items-center justify-center">
-                <svg className="w-8 h-8 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
-                </svg>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {projectTypes.map((project, index) => (
+            <div
+              key={index}
+              className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition"
+            >
+              <div className="w-12 h-12 bg-[#0A6FB0] rounded-lg flex items-center justify-center mb-4">
+                <project.icon className="w-6 h-6 text-white" />
               </div>
-              <p className="text-sm">Video Player</p>
+              <h3 className="text-lg font-semibold text-gray-800 mb-3">{project.title}</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">{project.description}</p>
             </div>
-          </div>
+          ))}
+        </div>
 
-          {/* Text Content */}
-          <div className="space-y-6">
-            <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-              Our team has successfully completed numerous solar energy projects across various 
-              sectors. We specialize in designing and implementing comprehensive solar solutions 
-              that meet the unique requirements of each client.
-            </p>
-            <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-              From residential installations to large-scale commercial and industrial projects, 
-              we bring years of expertise and a commitment to excellence. Our project management 
-              approach ensures timely delivery, quality workmanship, and optimal performance.
-            </p>
-            <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-              We take pride in our track record of successful project completions and the 
-              satisfaction of our clients. Each project is executed with precision and attention 
-              to detail, ensuring long-term reliability and maximum energy efficiency.
-            </p>
-
-            {/* Project Counter */}
-            <div className="mt-8">
-              <div className="flex items-baseline gap-4 mb-6">
-                <span className="text-6xl md:text-8xl font-bold text-[#0A6FB0]">65</span>
-                <span className="text-xl md:text-2xl text-gray-700 font-semibold">MW PROJECTS COMPLETED</span>
-              </div>
-              <button className="px-8 py-3 bg-[#0A6FB0] text-white rounded-lg font-semibold hover:bg-[#083B63] transition">
-                VIEW ALL
-              </button>
-            </div>
-          </div>
+        {/* Project Links */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <Link
+            href="/projects?status=ongoing"
+            className="px-8 py-3 bg-[#0A6FB0] text-white rounded-lg font-semibold hover:bg-[#083B63] transition text-center"
+          >
+            Ongoing Projects
+          </Link>
+          <Link
+            href="/projects?status=completed"
+            className="px-8 py-3 bg-[#0A6FB0] text-white rounded-lg font-semibold hover:bg-[#083B63] transition text-center"
+          >
+            Completed Projects
+          </Link>
         </div>
       </div>
     </section>

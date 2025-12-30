@@ -4,6 +4,7 @@ import Image from "next/image"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
+import { ProjectsSection } from "@/components/projects-section"
 import { Settings, Users, Wrench, Truck, Monitor, Hammer } from "lucide-react"
 
 export default function AboutUsPage() {
@@ -88,20 +89,16 @@ export default function AboutUsPage() {
             <div className="space-y-6">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-800">About Company</h2>
               <div className="space-y-4">
-                <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-                  APN Solar Energy Pvt. Ltd. is a JV Manufacturer, Energy consultant, and EPC company 
-                  dedicated to making renewable energy economically viable for everyone. Established in 
-                  Mumbai in 2017, we have grown to become a leading player in the solar energy sector.
-                </p>
-                <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-                  With a manufacturing capacity of 2 GWPA (Gigawatt Per Annum), we are committed to 
-                  delivering high-quality solar solutions. Our business franchise platform enables 
-                  partners across India to offer sustainable energy solutions to their communities.
-                </p>
-                <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-                  We focus on residential, commercial, and industrial power solutions, ensuring that 
-                  every project meets the highest standards of quality, efficiency, and sustainability.
-                </p>
+              <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+                Sun Radiation Power Solutions is committed to delivering reliable and sustainable solar energy solutions. We offer a
+                premium range of solar products including solar inverters, solar panels, solar batteries, and other related solar equipment to
+                meet residential, commercial, and industrial energy needs.
+              </p>
+              <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+                With a focus on quality, effective solutions, and timely delivery, we ensure our customers receive the best in clean energy
+                technology backed by professional service and long-term support. Our mission is to promote renewable energy and help
+                build a greener and more energy-independent future.
+              </p>
               </div>
             </div>
           </div>
@@ -117,19 +114,21 @@ export default function AboutUsPage() {
               <h2 className="text-4xl md:text-5xl font-bold text-gray-800">WHO WE ARE ?</h2>
               <div className="space-y-4">
                 <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-                  APN Solar Energy Pvt. Ltd. is a leading solar energy company driven by a team of 
-                  passionate professionals dedicated to transforming the renewable energy landscape. 
-                  Our expertise spans solar technology, engineering, and project management.
+                  Sun Radiation Power Solutions is a dedicated solar energy company focused on 
+                  delivering clean, reliable, and cost-effective renewable energy solutions. We 
+                  specialize in the supply, installation, and maintenance of high-quality solar panels, 
+                  solar inverters, solar batteries, and both on-grid and off-grid solar power systems. 
+                  Our mission is to help residential, commercial, and industrial customers reduce 
+                  electricity costs while contributing to a greener and more sustainable environment.
                 </p>
                 <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-                  We are proud to be ISO 9001 & 2015, ISO 45001:2018, ISO 14001: 2015 certified, 
-                  and an OEM Manufacture TUV-Rhineland & BIS Certified company. These certifications 
-                  reflect our commitment to quality, safety, and environmental responsibility.
-                </p>
-                <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-                  Our mission is to create a sustainable future by reducing carbon footprint through 
-                  innovative solar solutions. We believe in making clean energy accessible and affordable 
-                  for everyone, contributing to a greener planet.
+                  With a strong emphasis on quality, safety, and performance, our experienced team 
+                  designs customized solar solutions based on each client's energy needs. We follow 
+                  industry best practices and use trusted technology to ensure long-term efficiency 
+                  and durability. At Sun Radiation Power Solutions, customer satisfaction, timely 
+                  project execution, and transparent service are our core values. We believe solar 
+                  energy is the future, and we are committed to empowering communities by making 
+                  clean energy accessible, affordable, and dependable for everyone.
                 </p>
               </div>
             </div>
@@ -152,75 +151,8 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* OEM Manufacture Section */}
-      <section className="bg-white py-12 md:py-20 px-4 md:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
-            {/* Left Side - Text */}
-            <div className="space-y-6">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-800">OEM Manufacture</h2>
-              <div className="space-y-4">
-                <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-                  We are proud partners with "Contendre" Panels, our OEM manufacturing partner. Our 
-                  MNRE-authorised manufacturing factory is located in Bhiwandi, Maharashtra, with a 
-                  capacity of 70 MW. Our panels are rated A+ for performance and reliability.
-                </p>
-                <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-                  We focus on efficiency throughout the entire product value chain, from silicon 
-                  extraction to our TM-Series® solar panels. Our commitment to excellence ensures 
-                  that every panel meets the highest standards of quality and performance.
-                </p>
-                <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-                  Our motivations are clear: high performance, superior quality, respect for the 
-                  environment, and profitability for our partners. We believe that sustainable 
-                  energy solutions should be both effective and economically viable.
-                </p>
-              </div>
-            </div>
-
-            {/* Right Side - Video Player */}
-            <div className="w-full h-64 md:h-80 bg-gray-900 rounded-lg flex items-center justify-center relative">
-              <div className="text-center text-gray-400">
-                <div className="w-16 h-16 mx-auto mb-4 bg-gray-700 rounded-full flex items-center justify-center cursor-pointer hover:bg-gray-600 transition">
-                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
-                  </svg>
-                </div>
-                <p className="text-sm">Video Player</p>
-                <p className="text-xs mt-2 text-gray-500">0:15 / 0:15</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Certification Section */}
-      <section className="bg-white py-12 md:py-20 px-4 md:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-4">
-            <p className="text-[#0A6FB0] text-sm md:text-base mb-2">DOCUMENTS</p>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-12 text-center">OUR CERTIFICATION</h2>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {[
-              { name: "MAKE IN INDIA Commission", color: "bg-blue-100" },
-              { name: "Central Vigilance Commission", color: "bg-blue-100" },
-              { name: "MSME", color: "bg-blue-100" },
-              { name: "TCA International", color: "bg-blue-100" },
-              { name: "Management System", color: "bg-green-100" },
-              { name: "Certified Environment", color: "bg-green-100" },
-            ].map((cert, index) => (
-              <div
-                key={index}
-                className={`${cert.color} rounded-lg p-6 flex items-center justify-center h-32 md:h-40`}
-              >
-                <p className="text-xs md:text-sm text-gray-700 text-center font-semibold">{cert.name}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Projects Section (same as Home page) */}
+      <ProjectsSection />
 
       <Footer />
       <WhatsAppButton />

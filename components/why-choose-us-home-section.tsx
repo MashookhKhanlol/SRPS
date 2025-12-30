@@ -1,36 +1,26 @@
-import { Settings, Recycle, Shield, CheckSquare, Trophy, Users } from "lucide-react"
+import { Award, Users, Clock, MapPin } from "lucide-react"
 
 export function WhyChooseUsHomeSection() {
   const reasons = [
     {
-      icon: Settings,
-      title: "Easy Installation & Care",
-      description: "Our systems are designed for easy installation and minimal maintenance, ensuring hassle-free operation for years to come.",
-    },
-    {
-      icon: Recycle,
-      title: "Sustainable & Eco-Friendly",
-      description: "We provide clean, renewable energy solutions that significantly reduce your carbon footprint and environmental impact.",
-    },
-    {
-      icon: Shield,
-      title: "Safety & Reliability",
-      description: "All our products meet the highest safety standards and are built to provide reliable performance in all conditions.",
-    },
-    {
-      icon: CheckSquare,
-      title: "World-Class Quality",
-      description: "We use only premium components and materials, ensuring superior quality and long-lasting performance.",
-    },
-    {
-      icon: Trophy,
-      title: "Durable and Long-Lasting",
-      description: "Our products are engineered for durability, designed to withstand harsh weather conditions and provide decades of service.",
+      icon: Award,
+      title: "High Quality Solar Products",
+      description: "We offer premium-grade solar panels, inverters, and batteries from trusted manufacturers, ensuring durability, efficiency, and long-term performance for your energy needs.",
     },
     {
       icon: Users,
-      title: "Expert Installation",
-      description: "Our certified technicians ensure professional installation, optimal system performance, and comprehensive support.",
+      title: "Expert Installation Team",
+      description: "Our certified and experienced technicians provide professional installation services, ensuring optimal system configuration and maximum energy output for your property.",
+    },
+    {
+      icon: Clock,
+      title: "Effective & Timely Delivery",
+      description: "We understand the importance of timely project completion. Our streamlined processes ensure efficient delivery and installation within committed timelines.",
+    },
+    {
+      icon: MapPin,
+      title: "Pan-India Support & Service",
+      description: "With our extensive network across India, we provide comprehensive after-sales support, maintenance services, and technical assistance wherever you are located.",
     },
   ]
 
@@ -39,7 +29,7 @@ export function WhyChooseUsHomeSection() {
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-12">WHY CHOOSE US</h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {reasons.map((reason, index) => (
             <div
               key={index}

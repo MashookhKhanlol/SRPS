@@ -122,10 +122,10 @@ export default function ContactPage() {
               <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-[var(--color-border)]">
                 <MapPin className="w-6 h-6 text-[var(--color-primary)] flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-semibold text-[var(--color-primary)] mb-1">Corporate Headquarters</h3>
+                  <h3 className="font-semibold text-[var(--color-primary)] mb-1">Office Address</h3>
                   <p className="text-[var(--color-muted-foreground)] text-sm">
-                    123 Solar Street, Suite 500<br />
-                    San Francisco, CA 94102
+                    Near Hotel Omaya, Square, Sec-13 Kamal Vihar,<br />
+                    Raipur, Chhattisgarh
                   </p>
                 </div>
               </div>
@@ -133,24 +133,26 @@ export default function ContactPage() {
                 <Phone className="w-6 h-6 text-[var(--color-primary)] flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-semibold text-[var(--color-primary)] mb-1">Phone</h3>
-                  <p className="text-[var(--color-muted-foreground)] text-sm">+1 (555) 123-4567</p>
-                  <p className="text-[var(--color-muted-foreground)] text-sm">+1 (555) 987-6543</p>
+                  <p className="text-[var(--color-muted-foreground)] text-sm">+91 97706 39219</p>
+                  <p className="text-[var(--color-muted-foreground)] text-sm">+91 92440 66805</p>
                 </div>
               </div>
               <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-[var(--color-border)]">
                 <Mail className="w-6 h-6 text-[var(--color-primary)] flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-semibold text-[var(--color-primary)] mb-1">Email</h3>
-                  <p className="text-[var(--color-muted-foreground)] text-sm">info@srps.com</p>
-                  <p className="text-[var(--color-muted-foreground)] text-sm">projects@srps.com</p>
+                  <p className="text-[var(--color-muted-foreground)] text-sm">
+                    sunradiationpowersolutions@gmail.com
+                  </p>
                 </div>
               </div>
               <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-[var(--color-border)]">
                 <Clock className="w-6 h-6 text-[var(--color-primary)] flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-semibold text-[var(--color-primary)] mb-1">Office Hours</h3>
-                  <p className="text-[var(--color-muted-foreground)] text-sm">Monday - Friday: 8:00 AM - 6:00 PM</p>
-                  <p className="text-[var(--color-muted-foreground)] text-sm">Saturday: 9:00 AM - 2:00 PM</p>
+                  <p className="text-[var(--color-muted-foreground)] text-sm">
+                    Monday – Saturday: 10:00 AM – 6:00 PM
+                  </p>
                 </div>
               </div>
             </div>

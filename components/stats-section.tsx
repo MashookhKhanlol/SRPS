@@ -1,26 +1,16 @@
-import { Leaf, Trophy, Handshake, Home } from "lucide-react"
+import { Leaf, Handshake } from "lucide-react"
 
 export function StatsSection() {
   const stats = [
     {
       icon: Leaf,
-      value: "2",
+      value: "5+",
       label: "Years",
     },
     {
-      icon: Trophy,
-      value: "46+",
-      label: "Partners",
-    },
-    {
       icon: Handshake,
-      value: "0",
+      value: "10+",
       label: "Projects",
-    },
-    {
-      icon: Home,
-      value: "0",
-      label: "Customers",
     },
   ]
 
@@ -41,7 +31,7 @@ export function StatsSection() {
       <div className="relative z-10 max-w-7xl mx-auto">
         <h2 className="text-5xl md:text-6xl font-bold text-white mb-16 text-center">OUR STATS</h2>
         
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 gap-8">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
               <div className="w-16 h-16 mx-auto mb-4 bg-white/20 rounded-full flex items-center justify-center">

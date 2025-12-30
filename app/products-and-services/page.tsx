@@ -2,6 +2,12 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import Image from "next/image"
+import { ProductDescriptionSection } from "@/components/product-description-section"
+import { PanelComparisonSection } from "@/components/panel-comparison-section"
+import { InverterDescriptionSection } from "@/components/inverter-description-section"
+import { MeterDescriptionSection } from "@/components/meter-description-section"
+import { OtherProductsSection } from "@/components/other-products-section"
+import { ServicesSRPSSection } from "@/components/services-srps-section"
 
 export default function ProductsAndServicesPage() {
   const products = [
@@ -28,33 +34,6 @@ export default function ProductsAndServicesPage() {
     {
       title: "Solar Water Heater",
       description: "Energy-efficient devices that use solar radiation to heat water, providing hot water for residential and commercial use while reducing energy costs.",
-    },
-  ]
-
-  const services = [
-    {
-      title: "Low Installation Costs",
-      description: "We offer competitive installation services at affordable prices, ensuring you get the best value for your investment in solar energy solutions.",
-    },
-    {
-      title: "Reusable Energy",
-      description: "We value nature and believe in recycling energy. Our commitment to sustainability ensures top-notch services that benefit both you and the environment.",
-    },
-    {
-      title: "Healthy and Safe Energy",
-      description: "Our products are designed with health and safety as top priorities, ensuring clean and safe energy solutions for your home and business.",
-    },
-    {
-      title: "Multi Purpose Usage",
-      description: "Our products are compatible for various conditions, segments, and purposes including Residential, Commercial, and Street applications.",
-    },
-    {
-      title: "Durable and Long Lasting",
-      description: "We provide durable products that are thoroughly tested and made with premium quality materials, ensuring long-term reliability and performance.",
-    },
-    {
-      title: "Hassle Free Installation",
-      description: "Our expert and professional installation team ensures smooth and hassle-free installation, taking care of all technical aspects for you.",
     },
   ]
 
@@ -170,29 +149,23 @@ export default function ProductsAndServicesPage() {
         </div>
       </section>
 
-      {/* Services Provided by APN Section */}
-      <section className="bg-white py-12 md:py-20 px-4 md:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-4">
-            <p className="text-gray-500 text-sm mb-2">Services</p>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-12 text-center">
-            Services Provided by APN
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition"
-              >
-                <h3 className="text-xl font-bold text-gray-800 mb-3">{service.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Product Descriptions with pop-up details */}
+      <ProductDescriptionSection />
+
+      {/* Panel comparison table (Learn Easy with Table) */}
+      <PanelComparisonSection />
+
+      {/* Meter product descriptions */}
+      <MeterDescriptionSection />
+
+      {/* Inverter descriptions with pop-up details */}
+      <InverterDescriptionSection />
+
+      {/* Other supporting products */}
+      <OtherProductsSection />
+
+      {/* Services provided by SRPS */}
+      <ServicesSRPSSection />
 
       <Footer />
       <WhatsAppButton />
