@@ -1,10 +1,5 @@
 import { cn } from "@/lib/utils";
-import {
-  IconHome,
-  IconBuildingFactory,
-  IconBolt,
-  IconBattery,
-} from "@tabler/icons-react";
+import { Home, Building2, Zap, Battery } from "lucide-react";
 
 type ProjectFeature = {
   title: string;
@@ -18,25 +13,25 @@ export function ProjectExperienceSection() {
       title: "Residential Solar Projects",
       description:
         "We have installed rooftop solar systems for individual homes, helping families lower their electricity bills and achieve energy independence. These projects include on-grid, off-grid, and hybrid solar systems, customized as per household power requirements.",
-      icon: <IconHome className="w-8 h-8" />,
+      icon: <Home className="w-8 h-8" />,
     },
     {
       title: "Commercial & Industrial Solar Projects",
       description:
         "Our commercial projects support shops, offices, warehouses, and small industries by providing reliable solar power solutions. These installations help businesses reduce operational costs while ensuring uninterrupted power through advanced inverters and battery backup systems.",
-      icon: <IconBuildingFactory className="w-8 h-8" />,
+      icon: <Building2 className="w-8 h-8" />,
     },
     {
       title: "Off-Grid & Rural Electrification Projects",
       description:
         "We have executed off-grid solar installations in areas with limited or unreliable grid supply. These projects ensure continuous electricity for lighting, appliances, and essential equipment, improving quality of life and productivity.",
-      icon: <IconBolt className="w-8 h-8" />,
+      icon: <Zap className="w-8 h-8" />,
     },
     {
       title: "Solar Inverter & Battery Installations",
       description:
         "Apart from solar panels, we have completed multiple projects involving solar inverters, batteries, and power backup systems, ensuring stable and long-lasting performance for our clients.",
-      icon: <IconBattery className="w-8 h-8" />,
+      icon: <Battery className="w-8 h-8" />,
     },
   ];
 
