@@ -27,7 +27,7 @@ export function GovernmentSubsidySection() {
   ]
 
   return (
-    <section className="bg-white py-12 md:py-20 px-4 md:px-8">
+    <section id="government-subsidy" className="bg-white py-12 md:py-20 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Government Subsidy Available</h2>
         <p className="text-xl md:text-2xl text-[#0A6FB0] font-semibold mb-12">PM Surya Ghar: Muft Bijli Yojana (Residential Solar)</p>

@@ -44,7 +44,7 @@ export function HeroSection() {
             onMouseEnter={() => setIsOverText(true)}
             onMouseLeave={() => setIsOverText(false)}
           >
-            Welcome To Sun Radiation Power Solutions
+            Sun Radiation Power Solutions
           </h1>
 
           <p
@@ -67,10 +67,10 @@ export function HeroSection() {
           {/* Call to action buttons */}
           <div className="flex flex-col md:flex-row gap-3 md:gap-4">
             <Link
-              href="/contact"
+              href="#solar-savings-calculator"
               className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-[#0A6FB0] text-white rounded-lg font-semibold hover:bg-[#083B63] transition text-sm md:text-base"
             >
-              Register Now
+              Get a Free Solar Savings Estimate
             </Link>
           </div>
         </div>

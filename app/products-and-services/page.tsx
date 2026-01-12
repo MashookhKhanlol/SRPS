@@ -1,7 +1,10 @@
+"use client"
+
+import { useEffect, useState } from "react"
+import Image from "next/image"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
-import Image from "next/image"
 import { ProductDescriptionSection } from "@/components/product-description-section"
 import { PanelComparisonSection } from "@/components/panel-comparison-section"
 import { InverterDescriptionSection } from "@/components/inverter-description-section"
@@ -10,6 +13,16 @@ import { OtherProductsSection } from "@/components/other-products-section"
 import { ServicesSRPSSection } from "@/components/services-srps-section"
 
 export default function ProductsAndServicesPage() {
+  const executionImages = ["/11 (1).jpg", "/11 (2).jpg", "/11 (3).jpg", "/11 (4).jpg"]
+  const [currentExecutionImage, setCurrentExecutionImage] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentExecutionImage((prev) => (prev + 1) % executionImages.length)
+    }, 3000)
+    return () => clearInterval(interval)
+  }, [executionImages.length])
+
   const products = [
     {
       title: "Ongrid Solar",
@@ -66,14 +79,13 @@ export default function ProductsAndServicesPage() {
       
       {/* Header Section with Background Image */}
       <section className="relative w-full h-64 md:h-96 overflow-hidden">
-        <div className="absolute inset-0 bg-[#083B63]">
-          <div 
-            className="absolute inset-0 bg-cover bg-center opacity-30"
-            style={{
-              backgroundImage: "url('/placeholder.jpg')",
-            }}
-          />
-          <div className="absolute inset-0 bg-[#083B63]/80"></div>
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-fixed"
+          style={{
+            backgroundImage: "url('/Solar Bg.png')",
+            backgroundAttachment: "fixed",
+          }}
+        >
         </div>
         <div className="relative z-10 h-full flex items-center justify-center">
           <h1 className="text-3xl md:text-5xl font-bold text-white uppercase">PRODUCTS & SERVICES</h1>
@@ -114,14 +126,37 @@ export default function ProductsAndServicesPage() {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-12">Our Product Execution Process</h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
-            {/* Image */}
-            <div className="w-full h-64 md:h-96 relative rounded-lg overflow-hidden">
-              <Image
-                src="/placeholder.jpg"
-                alt="Solar installation process"
-                fill
-                className="object-cover"
-              />
+            {/* Image Carousel */}
+            <div className="w-full h-64 md:h-96 relative rounded-lg overflow-hidden bg-gray-100">
+              {executionImages.map((image, index) => (
+                <div
+                  key={index}
+                  className={`absolute inset-0 transition-opacity duration-1000 ${
+                    index === currentExecutionImage ? "opacity-100 z-10" : "opacity-0 z-0"
+                  }`}
+                >
+                  <Image
+                    src={image}
+                    alt={`Execution process image ${index + 1}`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+              ))}
+              {/* Dots */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+                {executionImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentExecutionImage(index)}
+                    className={`w-2 h-2 rounded-full transition ${
+                      index === currentExecutionImage ? "bg-white w-6" : "bg-white/50"
+                    }`}
+                    aria-label={`Go to execution image ${index + 1}`}
+                  />
+                ))}
+              </div>
             </div>
 
             {/* Process Steps */}
