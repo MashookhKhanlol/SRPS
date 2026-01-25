@@ -4,7 +4,6 @@ import { useState, useEffect } from "react"
 import Image from "next/image"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { WhatsAppButton } from "@/components/whatsapp-button"
 import { ProjectsSection } from "@/components/projects-section"
 import { Settings, Users, Wrench, Truck, Monitor, Hammer } from "lucide-react"
 
@@ -174,7 +173,6 @@ export default function AboutUsPage() {
       <ProjectsSection />
 
       <Footer />
-      <WhatsAppButton />
     </main>
   )
 }

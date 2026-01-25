@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next"
 import { Toaster } from "sonner"
 import "./globals.css"
 import CursorFollow from "@/components/ui/cursor-follow"
+import { WhatsAppButton } from "@/components/whatsapp-button"
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600", "700"] })
 
@@ -35,6 +36,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
         <CursorFollow>{children}</CursorFollow>
+        <WhatsAppButton />
         <Analytics />
         <Toaster />
       </body>

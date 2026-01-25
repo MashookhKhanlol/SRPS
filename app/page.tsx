@@ -14,7 +14,6 @@ import { BusinessPartnerSection } from "@/components/business-partner-section"
 import { StatsSection } from "@/components/stats-section"
 import { SolarSavingsCalculator } from "@/components/solar-savings-calculator"
 import { SolarServicesCTASection } from "@/components/solar-services-cta-section"
-import { WhatsAppButton } from "@/components/whatsapp-button"
 
 export default function Home() {
   return (
@@ -35,7 +34,6 @@ export default function Home() {
       <SolarSavingsCalculator />
       <SolarServicesCTASection />
       <Footer />
-      <WhatsAppButton />
     </main>
   )
 }

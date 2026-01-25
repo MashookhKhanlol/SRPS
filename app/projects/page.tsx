@@ -4,7 +4,6 @@ import { useState } from "react"
 import Image from "next/image"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { WhatsAppButton } from "@/components/whatsapp-button"
 import { TestimonialCarousel } from "@/components/ui/testimonial"
 import { ProjectExperienceSection } from "@/components/ui/feature-section-with-hover-effects"
 import { X, Check } from "lucide-react"
@@ -740,7 +739,6 @@ export default function ProjectsPage() {
       )}
 
       <Footer />
-      <WhatsAppButton />
     </main>
   )
 }

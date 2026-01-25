@@ -21,6 +21,11 @@ export function SolarSavingsCalculator() {
     monthlySavings: number
     roiYears: number
     co2Reduction: number
+    subsidyCentral: number
+    subsidyState: number
+    subsidyTotal: number
+    systemCost: number
+    netSystemCost: number
   } | null>(null)
 
   // Average electricity rates by location (INR per kWh)
@@ -45,6 +50,34 @@ export function SolarSavingsCalculator() {
   // CO2 emission factor (kg CO2 per kWh)
   const co2PerKWh = 0.82 // India's grid emission factor
 
+  const getSubsidyForSystemSize = (sizeKW: number) => {
+    // Subsidy slabs (as provided):
+    // 1 kW:  Central 30,000 + State 15,000 = 45,000
+    // 2 kW:  Central 60,000 + State 30,000 = 90,000
+    // 3-10kW: Central 78,000 + State 30,000 = 1,08,000 (capped)
+    if (!Number.isFinite(sizeKW) || sizeKW <= 0) {
+      return { central: 0, state: 0, total: 0, isCapped: false }
+    }
+
+    if (sizeKW < 2) {
+      const central = 30000
+      const state = 15000
+      return { central, state, total: central + state, isCapped: false }
+    }
+
+    if (sizeKW < 3) {
+      const central = 60000
+      const state = 30000
+      return { central, state, total: central + state, isCapped: false }
+    }
+
+    // 3 kW and above: capped at the 3-10 kW slab total
+    const central = 78000
+    const state = 30000
+    const isCapped = sizeKW > 10
+    return { central, state, total: central + state, isCapped }
+  }
+
   const calculateSavings = () => {
     if (!electricityUsage || !location || !systemSize) {
       return
@@ -63,12 +96,14 @@ export function SolarSavingsCalculator() {
 
     // Calculate system cost
     const systemCost = size * costPerKW
+    const subsidy = getSubsidyForSystemSize(size)
+    const netSystemCost = Math.max(0, systemCost - subsidy.total)
 
     // Calculate annual savings
     const annualSavings = monthlySavings * 12
 
     // Calculate ROI in years
-    const roiYears = systemCost / annualSavings
+    const roiYears = annualSavings > 0 ? netSystemCost / annualSavings : 0
 
     // Calculate CO2 reduction (kg per year)
     const co2Reduction = (monthlySolarUsage * 12 * co2PerKWh) / 1000 // Convert to tons
@@ -77,6 +112,11 @@ export function SolarSavingsCalculator() {
       monthlySavings: Math.round(monthlySavings),
       roiYears: Math.round(roiYears * 10) / 10,
       co2Reduction: Math.round(co2Reduction * 10) / 10,
+      subsidyCentral: subsidy.central,
+      subsidyState: subsidy.state,
+      subsidyTotal: subsidy.total,
+      systemCost: Math.round(systemCost),
+      netSystemCost: Math.round(netSystemCost),
     })
   }
 
@@ -160,6 +200,45 @@ export function SolarSavingsCalculator() {
                 </p>
               </div>
 
+              <div className="rounded-lg border border-gray-200 overflow-hidden">
+                <div className="bg-[#E9F6FF] px-4 py-3">
+                  <p className="text-sm font-semibold text-gray-800">Subsidy (Central + C.G. State)</p>
+                  <p className="text-xs text-gray-600">For 3 kW to 10 kW, total subsidy is the same: ₹1,08,000 (₹78,000 + ₹30,000).</p>
+                </div>
+                <div className="w-full overflow-x-auto bg-white">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="text-left text-gray-600 border-t border-gray-200">
+                        <th className="px-4 py-2 font-semibold">Kilo watt</th>
+                        <th className="px-4 py-2 font-semibold">Central Govt.</th>
+                        <th className="px-4 py-2 font-semibold">C.G State Govt.</th>
+                        <th className="px-4 py-2 font-semibold">Total</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-gray-800">
+                      <tr className="border-t border-gray-200">
+                        <td className="px-4 py-2">1 kW</td>
+                        <td className="px-4 py-2">₹30,000</td>
+                        <td className="px-4 py-2">₹15,000</td>
+                        <td className="px-4 py-2 font-semibold">₹45,000</td>
+                      </tr>
+                      <tr className="border-t border-gray-200">
+                        <td className="px-4 py-2">2 kW</td>
+                        <td className="px-4 py-2">₹60,000</td>
+                        <td className="px-4 py-2">₹30,000</td>
+                        <td className="px-4 py-2 font-semibold">₹90,000</td>
+                      </tr>
+                      <tr className="border-t border-gray-200">
+                        <td className="px-4 py-2">3 kW - 10 kW</td>
+                        <td className="px-4 py-2">₹78,000</td>
+                        <td className="px-4 py-2">₹30,000</td>
+                        <td className="px-4 py-2 font-semibold">₹1,08,000</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
               <Button
                 onClick={calculateSavings}
                 className="w-full bg-[#0A6FB0] hover:bg-[#083B63] text-white text-lg py-6"
@@ -197,6 +276,26 @@ export function SolarSavingsCalculator() {
 
                     <div className="flex items-start gap-4 p-4 bg-[#E9F6FF] rounded-lg">
                       <div className="w-12 h-12 bg-[#0A6FB0] rounded-lg flex items-center justify-center flex-shrink-0">
+                        <DollarSign className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="w-full">
+                        <h4 className="text-lg font-semibold text-gray-800 mb-1">
+                          Estimated Subsidy (Central + State)
+                        </h4>
+                        <p className="text-3xl font-bold text-[#0A6FB0]">
+                          ₹{results.subsidyTotal.toLocaleString()}
+                        </p>
+                        <p className="text-sm text-gray-600 mt-1">
+                          Central: ₹{results.subsidyCentral.toLocaleString()} + State: ₹{results.subsidyState.toLocaleString()}
+                        </p>
+                        <p className="text-sm text-gray-600">
+                          System cost: ₹{results.systemCost.toLocaleString()} → Net after subsidy: ₹{results.netSystemCost.toLocaleString()}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4 p-4 bg-[#E9F6FF] rounded-lg">
+                      <div className="w-12 h-12 bg-[#0A6FB0] rounded-lg flex items-center justify-center flex-shrink-0">
                         <TrendingUp className="w-6 h-6 text-white" />
                       </div>
                       <div>
@@ -207,7 +306,7 @@ export function SolarSavingsCalculator() {
                           {results.roiYears} Years
                         </p>
                         <p className="text-sm text-gray-600 mt-1">
-                          Time to recover your investment
+                          Time to recover your investment (after subsidy)
                         </p>
                       </div>
                     </div>

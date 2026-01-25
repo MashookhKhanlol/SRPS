@@ -25,32 +25,15 @@ export function Footer() {
 
           {/* Social Media Icons - Right Side */}
           <div className="flex items-center gap-4">
+            
             <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#FFB43B] transition-colors"
-              aria-label="Facebook"
-            >
-              <Facebook size={20} />
-            </a>
-            <a
-              href="#"
-              target="_blank"
+              href="https://www.instagram.com/sun.radiation.power.solutions?igsh=aDVqYzc5ejVkb2pq"
+              target="https://www.instagram.com/sun.radiation.power.solutions?igsh=aDVqYzc5ejVkb2pq"
               rel="noopener noreferrer"
               className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#FFB43B] transition-colors"
               aria-label="Instagram"
             >
               <Instagram size={20} />
-            </a>
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#FFB43B] transition-colors"
-              aria-label="YouTube"
-            >
-              <Youtube size={20} />
             </a>
           </div>
         </div>

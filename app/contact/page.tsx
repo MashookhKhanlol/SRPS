@@ -48,6 +48,8 @@ type FormData = z.infer<typeof formSchema>
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const mapsUrl = "https://maps.app.goo.gl/KTDuFHabZ6cgrc426"
+  const emailAddress = "sunradiationpowersolutions@gmail.com"
   const {
     register,
     handleSubmit,
@@ -131,7 +133,7 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-semibold text-[var(--color-primary)] mb-1">Office Address</h3>
                   <p className="text-[var(--color-muted-foreground)] text-sm">
-                    Near Hotel Omaya, Square, Sec-13 Kamal Vihar,<br />
+                    Progressive Point, 1st Floor, Shop No. 158, Lalpur,<br />
                     Raipur, Chhattisgarh
                   </p>
                 </div>
@@ -149,7 +151,12 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-semibold text-[var(--color-primary)] mb-1">Email</h3>
                   <p className="text-[var(--color-muted-foreground)] text-sm">
-                    sunradiationpowersolutions@gmail.com
+                    <a
+                      href={`mailto:${emailAddress}`}
+                      className="hover:underline underline-offset-4"
+                    >
+                      {emailAddress}
+                    </a>
                   </p>
                 </div>
               </div>
@@ -163,12 +170,32 @@ export default function ContactPage() {
                 </div>
               </div>
             </div>
-            {/* Map Placeholder */}
-            <div className="h-[400px] bg-[var(--color-card)] rounded-lg border border-[var(--color-border)] overflow-hidden">
-              <div className="w-full h-full flex items-center justify-center text-[var(--color-muted-foreground)]">
-                <MapPin className="w-12 h-12" />
+            {/* Map */}
+            <a
+              href={mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="h-[400px] bg-[var(--color-card)] rounded-lg border border-[var(--color-border)] overflow-hidden group block"
+              aria-label="Open location in Google Maps"
+            >
+              <div className="w-full h-full flex items-center justify-center relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#E9F6FF] to-white" />
+                <div className="relative z-10 text-center px-8">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-[#0A6FB0] rounded-full flex items-center justify-center shadow-sm group-hover:scale-105 transition">
+                    <MapPin className="w-8 h-8 text-white" />
+                  </div>
+                  <p className="text-lg font-semibold text-[var(--color-primary)] mb-2">
+                    View on Google Maps
+                  </p>
+                  <p className="text-sm text-[var(--color-muted-foreground)]">
+                    Progressive Point, 1st Floor, Shop No. 158, Lalpur, Raipur, Chhattisgarh
+                  </p>
+                  <p className="text-xs text-[var(--color-muted-foreground)] mt-3 underline underline-offset-4">
+                    Open directions
+                  </p>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>
@@ -177,7 +204,9 @@ export default function ContactPage() {
       <section id="contact-form" className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-[var(--color-primary)] mb-4">Start Your Project</h2>
+            <h2 className="text-4xl font-bold text-[var(--color-primary)] mb-4">
+              Get FREE Solar Feasibility Report for Your Roof
+            </h2>
             <p className="text-[var(--color-muted-foreground)] text-lg">
               Fill out the form below and our team will get back to you within 24 hours.
             </p>
