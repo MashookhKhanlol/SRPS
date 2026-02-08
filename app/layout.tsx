@@ -2,7 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
-import { Toaster } from "sonner"
+import { ClientToaster } from "@/components/client-toaster"
 import "./globals.css"
 import CursorFollow from "@/components/ui/cursor-follow"
 import { WhatsAppButton } from "@/components/whatsapp-button"
@@ -33,12 +33,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} antialiased`}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.className} antialiased`} suppressHydrationWarning>
         <CursorFollow>{children}</CursorFollow>
         <WhatsAppButton />
         <Analytics />
-        <Toaster />
+        <ClientToaster />
       </body>
     </html>
   )

@@ -1,23 +1,12 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import Image from "next/image"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ProjectsSection } from "@/components/projects-section"
+import { AboutCompanyImageSlide } from "@/components/about-company-image-slide"
 import { Settings, Users, Wrench, Truck, Monitor, Hammer } from "lucide-react"
 
 export default function AboutUsPage() {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  const aboutImages = ["/1 (1).jpg", "/1 (2).jpg", "/1 (3).jpg", "/1 (4).jpg"]
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % aboutImages.length)
-    }, 3000) // Change image every 3 seconds
-
-    return () => clearInterval(interval)
-  }, [aboutImages.length])
   const expertiseAreas = [
     {
       icon: Settings,
@@ -68,40 +57,8 @@ export default function AboutUsPage() {
       <section className="bg-gradient-to-b from-[#E9F6FF] to-white py-12 md:py-20 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-            {/* Left Side - Auto-scrolling Image Gallery */}
-            <div className="w-full">
-              <div className="relative w-full h-64 md:h-96 rounded-lg overflow-hidden bg-gray-100">
-                {aboutImages.map((image, index) => (
-                  <div
-                    key={index}
-                    className={`absolute inset-0 transition-opacity duration-1000 ${
-                      index === currentImageIndex ? "opacity-100 z-10" : "opacity-0 z-0"
-                    }`}
-                  >
-                    <Image
-                      src={image}
-                      alt={`About us image ${index + 1}`}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                  </div>
-                ))}
-                {/* Dots indicator */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-                  {aboutImages.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentImageIndex(index)}
-                      className={`w-2 h-2 rounded-full transition ${
-                        index === currentImageIndex ? "bg-white w-6" : "bg-white/50"
-                      }`}
-                      aria-label={`Go to image ${index + 1}`}
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
+            {/* Left Side - Auto-scrolling Image Gallery (shared component) */}
+            <AboutCompanyImageSlide />
 
             {/* Right Side - Text */}
             <div className="space-y-6">

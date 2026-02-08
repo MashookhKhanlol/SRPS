@@ -1,6 +1,7 @@
 "use client"
 
 import { Zap, Globe, TrendingUp, DollarSign, Car, Lightbulb } from "lucide-react"
+import { AboutCompanyImageSlide } from "@/components/about-company-image-slide"
 
 export function WhoWeAreSection() {
   const features = [
@@ -57,17 +58,8 @@ export function WhoWeAreSection() {
             </p>
           </div>
 
-          {/* Video Placeholder */}
-          <div className="w-full h-64 md:h-80 bg-gray-200 rounded-lg flex items-center justify-center">
-            <div className="text-center text-gray-500">
-              <div className="w-16 h-16 mx-auto mb-4 bg-gray-300 rounded-full flex items-center justify-center">
-                <svg className="w-8 h-8 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
-                </svg>
-              </div>
-              <p className="text-sm">Video Player</p>
-            </div>
-          </div>
+          {/* About us image slide */}
+          <AboutCompanyImageSlide className="h-64 md:h-80" />
         </div>
 
         {/* Experience Counter */}

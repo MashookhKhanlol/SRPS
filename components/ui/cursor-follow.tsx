@@ -25,12 +25,17 @@ interface CursorFollowProps {
 const CIRCLE_SIZE = 16
 
 const CursorFollow: React.FC<CursorFollowProps> = ({ children, className = "" }) => {
+  const [mounted, setMounted] = useState(false)
   const { x: mouseX, y: mouseY } = useCursorPosition()
   const [cursorText, setCursorText] = useState<string | null>(null)
   const [pendingText, setPendingText] = useState<string | null>(null)
   const [textWidth, setTextWidth] = useState<number>(0)
   const [ignored, setIgnored] = useState(false)
   const measureRef = useRef<HTMLSpanElement>(null)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   // Motion values for smooth follow
   const x = useMotionValue(0)
@@ -88,13 +93,13 @@ const CursorFollow: React.FC<CursorFollowProps> = ({ children, className = "" })
 
   return (
     <div
-      className={`relative h-full w-full ${className}`}
+      className={`relative min-h-[300px] w-full cursor-none ${className}`}
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
-      style={{ minHeight: 300, cursor: "none" }}
     >
       {children}
 
+      {mounted && (
       <motion.div
         initial={{ opacity: 0, scale: 0.7 }}
         animate={{
@@ -184,6 +189,7 @@ const CursorFollow: React.FC<CursorFollowProps> = ({ children, className = "" })
           </span>
         )}
       </motion.div>
+      )}
     </div>
   )
 }

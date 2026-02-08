@@ -4,6 +4,7 @@ import { useState } from "react"
 import Image from "next/image"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { AboutCompanyImageSlide } from "@/components/about-company-image-slide"
 import { TestimonialCarousel } from "@/components/ui/testimonial"
 import { ProjectExperienceSection } from "@/components/ui/feature-section-with-hover-effects"
 import { X, Check } from "lucide-react"
@@ -135,18 +136,8 @@ export default function ProjectsPage() {
               </div>
             </div>
 
-            {/* Right Column - Video Placeholder */}
-            <div className="w-full h-64 md:h-80 bg-gray-900 rounded-lg flex items-center justify-center relative">
-              <div className="text-center text-gray-400">
-                <div className="w-16 h-16 mx-auto mb-4 bg-gray-700 rounded-full flex items-center justify-center cursor-pointer hover:bg-gray-600 transition">
-                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
-                  </svg>
-                </div>
-                <p className="text-sm">Video Player</p>
-                <p className="text-xs mt-2 text-gray-500">0:00 / 0:13</p>
-              </div>
-            </div>
+            {/* Right Column - About us image slide */}
+            <AboutCompanyImageSlide className="h-64 md:h-80" />
           </div>
         </div>
       </section>
